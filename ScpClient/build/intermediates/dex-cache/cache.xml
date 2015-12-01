@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/simo/StudioProjects/ScpClient/app/libs/scplib.jar"
+        jar="/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/libs/scplib.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="da5ca511f05a59f172408344d22d4fc65e68fa8c">
-        <dex dex="/home/simo/StudioProjects/ScpClient/app/build/intermediates/pre-dexed/debug/scplib_b7ed2631ae410596404e779db4cb26973510e27f.jar" />
+        <dex dex="/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/build/intermediates/pre-dexed/debug/scplib_954c9d9146a7a84812869464944b5cb63a62cdf2.jar" />
     </item>
     <item
-        jar="/home/simo/StudioProjects/ScpClient/app/libs/android-support-v13.jar"
+        jar="/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/libs/android-support-v13.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="f4f7fcb93c67b84cdc871b82c36d9a849d6c5da1">
-        <dex dex="/home/simo/StudioProjects/ScpClient/app/build/intermediates/pre-dexed/debug/android-support-v13_14a335dfa832679a8a5dd6e8cb95ef3aaa9471e9.jar" />
+        <dex dex="/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/build/intermediates/pre-dexed/debug/android-support-v13_055840adce1864e0ad1cbcce4f6fe2ccb608e30c.jar" />
     </item>
 
 </items>

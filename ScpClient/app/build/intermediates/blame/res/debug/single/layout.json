@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/src/main/res/layout/activity_main.xml"
+    },
+    {
         "merged": "/home/simo/StudioProjects/ScpClient/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
         "source": "/home/simo/StudioProjects/ScpClient/app/src/main/res/layout/activity_main.xml"
     }

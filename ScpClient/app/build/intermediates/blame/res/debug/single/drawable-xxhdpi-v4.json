@@ -2,5 +2,9 @@
     {
         "merged": "/home/simo/StudioProjects/ScpClient/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_launcher.png",
         "source": "/home/simo/StudioProjects/ScpClient/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_launcher.png",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/ScpClient/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     }
 ]
