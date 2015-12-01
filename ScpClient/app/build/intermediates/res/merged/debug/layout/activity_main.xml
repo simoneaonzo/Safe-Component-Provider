@@ -1,0 +1,52 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="onStartClick"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="it.unige.cseclab.MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        android:entries="@array/componentslist">
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3.56"
+            android:entries="@array/componentslist" />
+
+        <Button
+            android:id="@+id/buttonActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activity" />
+        
+        <Button
+            android:id="@+id/buttonReceiver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receiver" />
+        
+        <Button
+            android:id="@+id/buttonService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service" />
+        
+        <Button
+            android:id="@+id/buttonProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Provider" />
+
+    </LinearLayout>
+
+</ScrollView>

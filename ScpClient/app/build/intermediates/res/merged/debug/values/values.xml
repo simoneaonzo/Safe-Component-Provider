@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="componentslist">
+        <item>@string/none</item>
+        <item>@string/mainactivity</item>
+        <item>@string/loginactivity</item>
+	    <item>@string/contactpayrec</item>
+	    <item>@string/balanceactivity</item>
+	    <item>@string/paymentactivity</item>
+	    <item>@string/normalpayrec</item>
+	    <item>@string/micropayrec</item>
+	    <item>@string/connectionser</item>
+	    <item>@string/historyprovider</item>
+	    <item>@string/qrscanneractivity</item>
+	    <item>@string/editoractivity</item>
+	    <item>@string/doceditoractivity</item>
+	    <item>@string/opendocreceiver</item>
+	    <item>@string/cloudservice</item>
+	    <item>@string/readeractivity</item>
+	    <item>@string/docviewactivity</item>
+	    <item>@string/viewdocreceiver</item>
+    </string-array>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">ScpClient</string>
+    <string name="balanceactivity">BalanceActivity</string>
+    <string name="cloudservice">CloudSer.</string>
+    <string name="connectionser">ConnectionSer.</string>
+    <string name="contactpayrec">ContactPayRec.</string>
+    <string name="doceditoractivity">DocEditorAct.</string>
+    <string name="docviewactivity">DocViewAct.</string>
+    <string name="editoractivity">EditorActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="historyprovider">HistoryProvider</string>
+    <string name="loginactivity">LoginActivity</string>
+    <string name="mainactivity">MainActivity</string>
+    <string name="micropayrec">MicroPayRec.</string>
+    <string name="none">-none-</string>
+    <string name="normalpayrec">NormalPayRec.</string>
+    <string name="opendocreceiver">OpenDocRec.</string>
+    <string name="paymentactivity">PaymentActivity</string>
+    <string name="qrscanneractivity">QRScannerActivity</string>
+    <string name="readeractivity">ReaderActivity</string>
+    <string name="viewdocreceiver">ViewDocRec.</string>
+</resources>
