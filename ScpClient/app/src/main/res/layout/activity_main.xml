@@ -47,6 +47,14 @@
             android:layout_height="wrap_content"
             android:text="Provider" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:id="@+id/buttonTest"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="3.56" />
+
     </LinearLayout>
 
 </ScrollView>

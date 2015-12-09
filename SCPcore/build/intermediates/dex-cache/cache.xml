@@ -1,26 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/simo/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/home/simo/StudioProjects/SCPcore/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3_c5ec6142e419972c288b6728904ea1a562d47a09.jar" />
-    </item>
-    <item
-        jar="/home/simo/StudioProjects/SCPcore/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/home/simo/StudioProjects/SCPcore/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-21.0.3_bf4c308823043019fc5556bc7dbf74c60b625fbd.jar" />
-    </item>
-    <item
-        jar="/home/simo/StudioProjects/SCPcore/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/simo/StudioProjects/SCPcore/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3_a5b9130c2c2071a3bf99b91ec3938aa6d2b2244c.jar" />
-    </item>
-
-</items>
+<items version="2" />

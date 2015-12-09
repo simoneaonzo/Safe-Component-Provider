@@ -1,11 +1,23 @@
 [
     {
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/menu/front.xml",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/menu/front.xml"
+    },
+    {
         "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/menu/front.xml",
         "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/menu/front.xml"
     },
     {
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/menu/global.xml",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/menu/global.xml"
+    },
+    {
         "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/menu/mainactivity.xml",
         "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/menu/mainactivity.xml"
+    },
+    {
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/menu/mainactivity.xml",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/menu/mainactivity.xml"
     },
     {
         "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/menu/global.xml",

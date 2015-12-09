@@ -82,7 +82,6 @@ public class ReceiverChoiceActivity extends Activity {
 	                    	break;
 						}
 					}
-                	
                 	finish();
                 }
             });
@@ -91,7 +90,7 @@ public class ReceiverChoiceActivity extends Activity {
 
 	private Vector<String> checkPushableComponents(Frame[] f, String component) {
 		Vector<String> comps = new Vector<String>();
-		
+
 		for(Frame frame : f) {
 			if(component.compareTo("") == 0) {
 				if(ScpRuntime.canAlloc(frame, component))
@@ -104,7 +103,7 @@ public class ReceiverChoiceActivity extends Activity {
 
 		}
 		
-		return comps;
+		return comps; // nome degli elementi tra cui l'utente può scegliere
 	}
 	
 }

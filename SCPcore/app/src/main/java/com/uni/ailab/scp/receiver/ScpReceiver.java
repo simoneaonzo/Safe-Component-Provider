@@ -13,6 +13,10 @@ import com.uni.ailab.scp.log.Logger;
 
 public class ScpReceiver extends BroadcastReceiver
 {
+    public static final String SCP_MODE = "scp.mode";
+    public static final String SCP_CALLER = "scp.caller";
+    public static final String SCP_METHOD = "scp.method";
+    public static final String SCP_INTENT = "scp.intent";
 
     private static SQLiteHelper dbHelper;
     
@@ -35,31 +39,42 @@ public class ScpReceiver extends BroadcastReceiver
         /*
         Parse the request
          */
-        String component = intent.getStringExtra("scp.caller");
-        String type = intent.getStringExtra("scp.type");
-        String mode = intent.getStringExtra("scp.mode");
-        String action = intent.getStringExtra("scp.action");
-        Uri data = intent.getData();
-        
+        String mode = intent.getStringExtra(SCP_MODE);
+        String caller = intent.getStringExtra(SCP_CALLER);
+        String method = intent.getStringExtra(SCP_METHOD);
+        Intent wrappedIntent = intent.getParcelableExtra(SCP_INTENT);
+        String type = inferType(method);
+        String componentFqdn = wrappedIntent.getComponent().getClassName();
+
+
+
+
+        /* ANSWER
+        if (true) {
+            Intent intentWrapper = new Intent();
+            intentWrapper.setAction("it.unige.scp.action.answer");
+            intentWrapper.putExtra("scp.method", method);
+            intentWrapper.putExtra("scp.intent", wrappedIntent);
+            context.sendBroadcast(intentWrapper);
+            return;
+        }
+        */
+
+
         Logger.log("*** New request received");
-        Logger.log("Component: " + component);
+        Logger.log("Component: " + caller);
         Logger.log("Type: " + type);
         Logger.log("Mode: " + mode);
-        Logger.log("Action: " + action);
         Logger.log("");
 
-        /*
-        Retrieve receiver(s)
-         */
-        if(mode.compareTo("broadcast") == 0) {
+
+        if(mode.equals("broadcast")) {
             // Retrieve list and ask user if needed
-            String query = dbHelper.getQuery(type, data, action);
+            String query = dbHelper.getQuery(type, null, null);
             Intent i = new Intent(context, ReceiverChoiceActivity.class);
             i.setAction(Intent.ACTION_VIEW);
-            //i.setClassName("com.uni.ailab.scp", ".gui.ReceiverChoiceActivity");
-            //i.setComponent(new ComponentName(context, ReceiverChoiceActivity.class));
             i.putExtra("scp.query", query);
-            i.putExtra("scp.caller", component);
+            i.putExtra("scp.caller", caller);
             i.putExtra("scp.type", type);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(i);
@@ -68,7 +83,17 @@ public class ScpReceiver extends BroadcastReceiver
             // TODO NYI
         	Log.i("ScpReceiver", "received mode " + mode);
         }
-        
 
+
+    }
+
+    private static String inferType(String methodName) {
+        final String activity = "Activity";
+        final String service = "Service";
+        if (methodName.contains(activity))
+            return activity;
+        if (methodName.contains(service))
+            return service;
+        return null;
     }
 }

@@ -10,8 +10,17 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <style>
-    </style>
+    <style />
+
+    <permission
+        android:name="com.uni.ailab.scp.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.uni.ailab.scp.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,15 +31,14 @@
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
-                <action android:name="it.unige.scp.action" />
+                <action android:name="it.unige.scp.action.ask" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name="com.uni.ailab.scp.gui.ReceiverChoiceActivity"
             android:enabled="true"
-            android:exported="false" >
-        </activity>
+            android:exported="false" />
         <activity
             android:name="com.uni.ailab.scp.FrontActivity"
             android:label="@string/title_activity_front" >

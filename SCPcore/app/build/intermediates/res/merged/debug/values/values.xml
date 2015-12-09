@@ -12,6 +12,7 @@
     <string name="title_activity_front">FrontActivity</string>
     <string name="title_activity_main">SCP</string>
     <string name="title_activity_mainactivity">MainActivity</string>
+    <string name="title_activity_test_recv">testRecvAct</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>

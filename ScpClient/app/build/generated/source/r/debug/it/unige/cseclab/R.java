@@ -26,10 +26,12 @@ public final class R {
         public static final int buttonProvider=0x7f070005;
         public static final int buttonReceiver=0x7f070003;
         public static final int buttonService=0x7f070004;
+        public static final int buttonTest=0x7f070006;
         public static final int spinner1=0x7f070001;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_simo_test=0x7f030001;
     }
     public static final class string {
         public static final int action_settings=0x7f060000;
