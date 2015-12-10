@@ -7,6 +7,24 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="it.unige.cseclab.SimoTest">
+    tools:context=".TestActivity">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:id="@+id/buttonBack"
+        android:layout_below="@+id/editText"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/buttonBack"
+        android:layout_alignStart="@+id/buttonBack"
+        android:layout_alignRight="@+id/buttonBack"
+        android:layout_alignEnd="@+id/buttonBack"
+        android:text="resBack" />
 </RelativeLayout>

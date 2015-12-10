@@ -17,6 +17,7 @@ public class ScpReceiver extends BroadcastReceiver
     public static final String SCP_CALLER = "scp.caller";
     public static final String SCP_METHOD = "scp.method";
     public static final String SCP_INTENT = "scp.intent";
+    public static final String REQUESTCODE = "requestCode";
 
     private static SQLiteHelper dbHelper;
     
@@ -39,50 +40,52 @@ public class ScpReceiver extends BroadcastReceiver
         /*
         Parse the request
          */
-        String mode = intent.getStringExtra(SCP_MODE);
+        //String mode = intent.getStringExtra(SCP_MODE);
         String caller = intent.getStringExtra(SCP_CALLER);
         String method = intent.getStringExtra(SCP_METHOD);
-        Intent wrappedIntent = intent.getParcelableExtra(SCP_INTENT);
+        int requestCode = -1;
+        if (method.equals("startActivityForResult"))
+            requestCode = Integer.parseInt(intent.getStringExtra(REQUESTCODE));
         String type = inferType(method);
-        String componentFqdn = wrappedIntent.getComponent().getClassName();
+        Intent wrappedIntent = intent.getParcelableExtra(SCP_INTENT);
+
+        String action = wrappedIntent.getAction();
+        ComponentName cn = wrappedIntent.getComponent();
+        if (cn != null) {
+            String componentFqdn = cn.getClassName();
+        }
 
 
-
-
-        /* ANSWER
         if (true) {
             Intent intentWrapper = new Intent();
             intentWrapper.setAction("it.unige.scp.action.answer");
-            intentWrapper.putExtra("scp.method", method);
-            intentWrapper.putExtra("scp.intent", wrappedIntent);
+            intentWrapper.putExtra(SCP_CALLER, caller);
+            intentWrapper.putExtra(SCP_METHOD, method);
+            intentWrapper.putExtra(SCP_INTENT, wrappedIntent);
+            if (requestCode != -1) {
+                intentWrapper.putExtra(REQUESTCODE, "" + requestCode);
+            }
             context.sendBroadcast(intentWrapper);
             return;
+
         }
-        */
+
 
 
         Logger.log("*** New request received");
         Logger.log("Component: " + caller);
         Logger.log("Type: " + type);
-        Logger.log("Mode: " + mode);
+        //Logger.log("Mode: " + mode);
         Logger.log("");
-
-
-        if(mode.equals("broadcast")) {
-            // Retrieve list and ask user if needed
-            String query = dbHelper.getQuery(type, null, null);
-            Intent i = new Intent(context, ReceiverChoiceActivity.class);
-            i.setAction(Intent.ACTION_VIEW);
-            i.putExtra("scp.query", query);
-            i.putExtra("scp.caller", caller);
-            i.putExtra("scp.type", type);
-            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(i);
-        }
-        else {
-            // TODO NYI
-        	Log.i("ScpReceiver", "received mode " + mode);
-        }
+        // Retrieve list and ask user if needed
+        String query = dbHelper.getQuery(type, null, action);
+        Intent i = new Intent(context, ReceiverChoiceActivity.class);
+        i.setAction(Intent.ACTION_VIEW);
+        i.putExtra("scp.query", query);
+        i.putExtra("scp.caller", caller);
+        i.putExtra("scp.type", type);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(i);
 
 
     }

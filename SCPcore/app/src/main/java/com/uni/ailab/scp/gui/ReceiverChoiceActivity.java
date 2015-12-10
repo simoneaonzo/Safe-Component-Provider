@@ -71,18 +71,18 @@ public class ReceiverChoiceActivity extends Activity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     
-                	String s = (String) cListView.getItemAtPosition(position);
-                	
-                	for(Frame f : frame) {
-						if(f.component.compareTo(s) == 0) {
-							if(component.compareTo("") == 0)
-								ScpRuntime.alloc(f, component);
-							else
-								ScpRuntime.push(f, component);
-	                    	break;
-						}
+				String s = (String) cListView.getItemAtPosition(position);
+
+				for(Frame f : frame) {
+					if(f.component.compareTo(s) == 0) {
+						if(component.compareTo("") == 0)
+							ScpRuntime.alloc(f, component);
+						else
+							ScpRuntime.push(f, component);
+						break;
 					}
-                	finish();
+				}
+				finish();
                 }
             });
         }

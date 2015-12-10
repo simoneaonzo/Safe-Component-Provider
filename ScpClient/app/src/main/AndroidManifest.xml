@@ -24,6 +24,7 @@
                 <action android:name="it.unige.scp.action.answer" />
             </intent-filter>
         </receiver>
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
@@ -33,7 +34,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SimoTest"></activity>
+        <activity android:name=".TestActivity" />
+
+        <service
+            android:name=".TestService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

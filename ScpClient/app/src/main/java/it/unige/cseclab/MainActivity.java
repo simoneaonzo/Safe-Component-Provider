@@ -5,13 +5,16 @@ import com.uni.ailab.scp.scplib.ScpIntent;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
+    private static final int CODE = 88;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +25,9 @@ public class MainActivity extends Activity {
         Button startSP = (Button) findViewById(R.id.buttonProvider);
         Button startSR = (Button) findViewById(R.id.buttonReceiver);
         Button startSS = (Button) findViewById(R.id.buttonService);
-        Button startTest = (Button) findViewById(R.id.buttonTest);
+        Button startTA = (Button) findViewById(R.id.buttonTestActivity);
+        Button startTS = (Button) findViewById(R.id.buttonTestService);
+        Button startTB = (Button) findViewById(R.id.buttonTestBrowser);
 
         OnClickListener listener = new OnClickListener() {
 
@@ -52,8 +57,16 @@ public class MainActivity extends Activity {
                         startScpService(v, component);
                         break;
                     }
-                    case R.id.buttonTest: {
-                        startTest(v, component);
+                    case R.id.buttonTestActivity: {
+                        startTestActivity(v, component);
+                        break;
+                    }
+                    case R.id.buttonTestService: {
+                        startTestService(v, component);
+                        break;
+                    }
+                    case R.id.buttonTestBrowser: {
+                        startTestBrowser(v, component);
                         break;
                     }
                 }
@@ -65,7 +78,9 @@ public class MainActivity extends Activity {
         startSP.setOnClickListener(listener);
         startSR.setOnClickListener(listener);
         startSS.setOnClickListener(listener);
-        startTest.setOnClickListener(listener);
+        startTA.setOnClickListener(listener);
+        startTS.setOnClickListener(listener);
+        startTB.setOnClickListener(listener);
     }
 
     public void startScpActivity(View v, String cmp) {
@@ -104,10 +119,42 @@ public class MainActivity extends Activity {
         c.sendBroadcast(intent);
     }
 
-    public void startTest(View v, String cmp) {
-        Intent i = new Intent(this, SimoTest.class);
-        SCPlibProxy.ScpStartActivity(this, i);
+    public void startTestActivity(View v, String cmp) {
+        Intent intent = new Intent(this, TestActivity.class);
+        //startActivityForResult(intent, CODE);
+        SCPlibProxy.ScpStartActivityForResult(this, intent, CODE);
     }
 
 
+    public void startTestService(View v, String cmp) {
+        Intent intent = new Intent(this, TestService.class);
+        //startService(intent);
+        SCPlibProxy.ScpStartService(this, intent);
+    }
+
+    public void startTestBrowser(View v, String cmp) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sixthevicious.wordpress.com/"));
+        //startActivity(browserIntent);
+        SCPlibProxy.ScpStartActivity(this, browserIntent);
+    }
+
+    public void startSendBroadcast(View v, String cmp) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sixthevicious.wordpress.com/"));
+        //startActivity(browserIntent);
+        SCPlibProxy.ScpStartActivity(this, browserIntent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == CODE) {
+            if(resultCode == Activity.RESULT_OK){
+                String result = data.getStringExtra("result");
+                Toast.makeText(getApplicationContext(), result, Toast.LENGTH_LONG).show();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                //Write your code if there's no result
+            }
+        }
+    }
 }

@@ -34,7 +34,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="it.unige.cseclab.SimoTest" />
+        <activity android:name="it.unige.cseclab.TestActivity" />
+
+        <service
+            android:name="it.unige.cseclab.TestService"
+            android:enabled="true"
+            android:exported="true" />
     </application>
 
 </manifest>
