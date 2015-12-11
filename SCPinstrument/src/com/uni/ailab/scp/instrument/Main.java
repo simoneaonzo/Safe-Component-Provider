@@ -11,6 +11,7 @@ import org.xml.sax.SAXException;
 
 
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -45,7 +46,7 @@ public class Main {
             brut.apktool.Main.main(apktoolArgs);
             AndroidManifestXML = Paths.get(tmpDir.toString(), "AndroidManifest.xml");
             new AndroidManifestExplorer(AndroidManifestXML);
-        } catch (IOException|InterruptedException|BrutException|ParserConfigurationException|SAXException e) {
+        } catch (IOException|InterruptedException|BrutException|ParserConfigurationException|SAXException|XPathExpressionException e) {
             e.printStackTrace();
         }
 

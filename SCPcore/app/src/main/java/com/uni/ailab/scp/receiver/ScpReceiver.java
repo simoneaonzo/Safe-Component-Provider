@@ -57,6 +57,7 @@ public class ScpReceiver extends BroadcastReceiver
 
 
         if (true) {
+            dbHelper.insertPermission("ciaodb");
             Intent intentWrapper = new Intent();
             intentWrapper.setAction("it.unige.scp.action.answer");
             intentWrapper.putExtra(SCP_CALLER, caller);
