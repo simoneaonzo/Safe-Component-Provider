@@ -4,15 +4,7 @@
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/drawable-xxhdpi/drawer_shadow.9.png"
     },
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/drawer_shadow.9.png",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/drawable-xxhdpi/drawer_shadow.9.png"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_drawer.png",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/drawable-xxhdpi/ic_drawer.png"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_drawer.png",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/drawable-xxhdpi/ic_drawer.png"
     }
 ]

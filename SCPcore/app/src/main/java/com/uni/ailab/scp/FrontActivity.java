@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.uni.ailab.scp.gui.ExpandableListAdapter;
+import com.uni.ailab.scp.policy.Policy;
+import com.uni.ailab.scp.policy.Scope;
+import com.uni.ailab.scp.receiver.SQLiteHelper;
 import com.uni.ailab.scp.runtime.Frame;
 import com.uni.ailab.scp.runtime.ScpRuntime;
 

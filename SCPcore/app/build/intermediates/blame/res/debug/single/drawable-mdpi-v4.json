@@ -1,23 +1,11 @@
 [
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_drawer.png",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/drawable-mdpi/ic_drawer.png"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_drawer.png",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/drawable-mdpi/ic_drawer.png"
     },
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/drawable-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_launcher.png",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/drawable-mdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/drawer_shadow.9.png",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/drawable-mdpi/drawer_shadow.9.png"
     },
     {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/drawer_shadow.9.png",

@@ -4,6 +4,7 @@ import com.uni.ailab.scp.scplib.ScpContext;
 import com.uni.ailab.scp.scplib.ScpIntent;
 
 import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -130,6 +131,10 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, TestService.class);
         //startService(intent);
         SCPlibProxy.ScpStartService(this, intent);
+        ContentValues cv = new ContentValues();
+        cv.put("test","best");
+        cv.put
+        getContentResolver().insert(Uri.parse("content://com.uni.ailab.scp.secManifestProvider/components"), cv);
     }
 
     public void startTestBrowser(View v, String cmp) {

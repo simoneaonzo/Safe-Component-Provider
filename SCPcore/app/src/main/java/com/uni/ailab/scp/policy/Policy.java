@@ -10,6 +10,19 @@ public class Policy {
     public Scope scope;
     public Formula formula;
 
+
+    public boolean isSticky() {
+        return sticky;
+    }
+
+    public Scope getScope() {
+        return scope;
+    }
+
+    public Formula getFormula() {
+        return formula;
+    }
+
     public Policy(Scope s, Formula f, boolean st) {
         sticky = st;
         scope = s;

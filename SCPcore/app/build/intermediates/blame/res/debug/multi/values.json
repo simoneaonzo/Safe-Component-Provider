@@ -11,7 +11,14 @@
                     "endOffset": 108
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 128,
+                        "endColumn": 57,
+                        "endOffset": 181
+                    }
                 }
             },
             {
@@ -23,7 +30,14 @@
                     "endOffset": 164
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 186,
+                        "endColumn": 55,
+                        "endOffset": 237
+                    }
                 }
             },
             {
@@ -35,7 +49,14 @@
                     "endOffset": 220
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/dimens.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 242,
+                        "endColumn": 55,
+                        "endOffset": 293
+                    }
                 }
             },
             {
@@ -47,7 +68,14 @@
                     "endOffset": 278
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 696,
+                        "endColumn": 57,
+                        "endOffset": 749
+                    }
                 }
             },
             {
@@ -59,7 +87,14 @@
                     "endOffset": 331
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 202,
+                        "endColumn": 52,
+                        "endOffset": 250
+                    }
                 }
             },
             {
@@ -71,7 +106,14 @@
                     "endOffset": 372
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 108,
+                        "endColumn": 40,
+                        "endOffset": 144
+                    }
                 }
             },
             {
@@ -83,7 +125,14 @@
                     "endOffset": 425
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 149,
+                        "endColumn": 52,
+                        "endOffset": 197
+                    }
                 }
             },
             {
@@ -95,7 +144,14 @@
                     "endOffset": 501
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 620,
+                        "endColumn": 75,
+                        "endOffset": 691
+                    }
                 }
             },
             {
@@ -107,7 +163,14 @@
                     "endOffset": 575
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 546,
+                        "endColumn": 73,
+                        "endOffset": 615
+                    }
                 }
             },
             {
@@ -119,7 +182,14 @@
                     "endOffset": 638
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 324,
+                        "endColumn": 62,
+                        "endOffset": 382
+                    }
                 }
             },
             {
@@ -131,7 +201,14 @@
                     "endOffset": 690
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endColumn": 51,
+                        "endOffset": 103
+                    }
                 }
             },
             {
@@ -143,7 +220,14 @@
                     "endOffset": 759
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 255,
+                        "endColumn": 68,
+                        "endOffset": 319
+                    }
                 }
             },
             {
@@ -174,7 +258,14 @@
                     "endOffset": 877
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 387,
+                        "endColumn": 52,
+                        "endOffset": 435
+                    }
                 }
             },
             {
@@ -186,7 +277,14 @@
                     "endOffset": 930
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 440,
+                        "endColumn": 52,
+                        "endOffset": 488
+                    }
                 }
             },
             {
@@ -198,7 +296,14 @@
                     "endOffset": 983
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml"
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 493,
+                        "endColumn": 52,
+                        "endOffset": 541
+                    }
                 }
             },
             {
@@ -211,323 +316,7 @@
                     "endOffset": 1274
                 },
                 "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/styles.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 25,
-                    "startColumn": 4,
-                    "startOffset": 1279,
-                    "endLine": 27,
-                    "endColumn": 12,
-                    "endOffset": 1434
-                },
-                "from": {
-                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/styles.xml"
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/values/values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 128,
-                        "endColumn": 57,
-                        "endOffset": 181
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 113,
-                    "endColumn": 55,
-                    "endOffset": 164
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 186,
-                        "endColumn": 55,
-                        "endOffset": 237
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 169,
-                    "endColumn": 55,
-                    "endOffset": 220
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/dimens.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 242,
-                        "endColumn": 55,
-                        "endOffset": 293
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 225,
-                    "endColumn": 57,
-                    "endOffset": 278
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 4,
-                        "startOffset": 696,
-                        "endColumn": 57,
-                        "endOffset": 749
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 283,
-                    "endColumn": 52,
-                    "endOffset": 331
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 202,
-                        "endColumn": 52,
-                        "endOffset": 250
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 336,
-                    "endColumn": 40,
-                    "endOffset": 372
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 108,
-                        "endColumn": 40,
-                        "endOffset": 144
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 377,
-                    "endColumn": 52,
-                    "endOffset": 425
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 149,
-                        "endColumn": 52,
-                        "endOffset": 197
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 430,
-                    "endColumn": 75,
-                    "endOffset": 501
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 4,
-                        "startOffset": 620,
-                        "endColumn": 75,
-                        "endOffset": 691
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 506,
-                    "endColumn": 73,
-                    "endOffset": 575
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 546,
-                        "endColumn": 73,
-                        "endOffset": 615
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 580,
-                    "endColumn": 62,
-                    "endOffset": 638
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 4,
-                        "startOffset": 324,
-                        "endColumn": 62,
-                        "endOffset": 382
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 643,
-                    "endColumn": 51,
-                    "endOffset": 690
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 56,
-                        "endColumn": 51,
-                        "endOffset": 103
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 695,
-                    "endColumn": 68,
-                    "endOffset": 759
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 255,
-                        "endColumn": 68,
-                        "endOffset": 319
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 764,
-                    "endColumn": 52,
-                    "endOffset": 812
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 4,
-                        "startOffset": 387,
-                        "endColumn": 52,
-                        "endOffset": 435
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 817,
-                    "endColumn": 52,
-                    "endOffset": 865
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 4,
-                        "startOffset": 440,
-                        "endColumn": 52,
-                        "endOffset": 488
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 870,
-                    "endColumn": 52,
-                    "endOffset": 918
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 4,
-                        "startOffset": 493,
-                        "endColumn": 52,
-                        "endOffset": 541
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 923,
-                    "endLine": 23,
-                    "endColumn": 12,
-                    "endOffset": 1209
-                },
-                "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/styles.xml",
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -540,15 +329,15 @@
             },
             {
                 "to": {
-                    "startLine": 24,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1214,
-                    "endLine": 26,
+                    "startOffset": 1279,
+                    "endLine": 27,
                     "endColumn": 12,
-                    "endOffset": 1369
+                    "endOffset": 1434
                 },
                 "from": {
-                    "file": "/home/simo/StudioProjects/SCPcore/app/src/main/res/values/styles.xml",
+                    "file": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/values/styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,

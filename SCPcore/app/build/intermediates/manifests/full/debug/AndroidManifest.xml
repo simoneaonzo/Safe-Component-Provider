@@ -50,8 +50,8 @@
         </activity>
 
         <provider
-            android:name="com.uni.ailab.scp.secManifestProvider.SecManifestProvider"
-            android:authorities="com.uni.ailab.scp.secManifestProvider.instances"
+            android:name="com.uni.ailab.scp.secureManifest.SecManifestProvider"
+            android:authorities="com.uni.ailab.scp.secureManifest"
             android:enabled="true"
             android:exported="true" />
     </application>

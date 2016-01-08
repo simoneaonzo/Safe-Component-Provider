@@ -1,6 +1,8 @@
 package com.uni.ailab.scp.receiver;
 
+import java.sql.PreparedStatement;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Vector;
 
 import com.uni.ailab.scp.cnf.Formula;
@@ -8,12 +10,14 @@ import com.uni.ailab.scp.policy.Permissions;
 import com.uni.ailab.scp.policy.Policy;
 import com.uni.ailab.scp.policy.Scope;
 import com.uni.ailab.scp.runtime.Frame;
+import com.uni.ailab.scp.secureManifest.ComponentType;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.net.Uri;
 import android.util.Log;
 
@@ -23,8 +27,8 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_PERMISSIONS = "permissions";
     public static final String TABLE_INSTANCES = "instances";
     public static final String TABLE_POLICIES = "policies";
-    public static final String TABLE_INSTANCES_PERMISSIONS = "instanceshavepermissions";
-    public static final String TABLE_INSTANCES_POLICIES = "instanceshavepolicies";
+    public static final String TABLE_COMPONENTS_PERMISSIONS = "componentshavepermissions";
+    public static final String TABLE_COMPONENTS_POLICIES = "componentshavepolicies";
 
     public static final String COLUMN_INSTANCE_ID = "instance_id";
     public static final String COLUMN_POLICY_ID = "policy_id";
@@ -65,29 +69,29 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             COLUMN_DATA + " text not null," +
             "foreign key ("+COLUMN_COMPNAME+") references " + TABLE_COMPONENTS + '(' + COLUMN_COMPNAME + "));";
 
-    private static final String CREATE_TABLE_INSTANCES_PERMISSIONS = "create table "
-            + TABLE_INSTANCES_PERMISSIONS + "(" +
-            COLUMN_INSTANCE_ID + " integer not null, " +
+    private static final String CREATE_TABLE_COMPONENTS_PERMISSIONS = "create table "
+            + TABLE_COMPONENTS_PERMISSIONS + "(" +
+            COLUMN_COMPNAME + " text not null, " +
             COLUMN_PERMNAME + " text not null," +
-            "foreign key ("+COLUMN_INSTANCE_ID+") references " + TABLE_INSTANCES + '(' + COLUMN_INSTANCE_ID + ')' +
+            "foreign key ("+COLUMN_COMPNAME+") references " + TABLE_COMPONENTS + '(' + COLUMN_COMPNAME + ')' +
             "foreign key ("+COLUMN_PERMNAME+") references " + TABLE_PERMISSIONS + '(' + COLUMN_PERMNAME + ')' +
-            "primary key ("+COLUMN_INSTANCE_ID+','+ COLUMN_PERMNAME +"));";
+            "primary key ("+COLUMN_COMPNAME+','+ COLUMN_PERMNAME +"));";
 
-    private static final String CREATE_TABLE_INSTANCES_POLICIES= "create table "
-            + TABLE_INSTANCES_POLICIES + "(" +
-            COLUMN_INSTANCE_ID + " integer not null, " +
+    private static final String CREATE_TABLE_COMPONENTS_POLICIES= "create table "
+            + TABLE_COMPONENTS_POLICIES + "(" +
+            COLUMN_COMPNAME + " text not null, " +
             COLUMN_POLICY_ID + " integer not null," +
-            "foreign key ("+COLUMN_INSTANCE_ID+") references " + TABLE_INSTANCES + '(' + COLUMN_INSTANCE_ID + ')' +
+            "foreign key ("+COLUMN_COMPNAME+") references " + TABLE_COMPONENTS + '(' + COLUMN_COMPNAME + ')' +
             "foreign key ("+COLUMN_POLICY_ID+") references " + TABLE_POLICIES + '(' + COLUMN_POLICY_ID + ')' +
-            "primary key ("+COLUMN_INSTANCE_ID+','+ COLUMN_POLICY_ID +"));";
+            "primary key ("+COLUMN_COMPNAME+','+ COLUMN_POLICY_ID +"));";
 
     private static final String[] tableCreation = {
             CREATE_TABLE_COMPONENTS,
             CREATE_TABLE_PERMISSIONS,
             CREATE_TABLE_POLICIES,
             CREATE_TABLE_INSTANCES,
-            CREATE_TABLE_INSTANCES_PERMISSIONS,
-            CREATE_TABLE_INSTANCES_POLICIES
+            CREATE_TABLE_COMPONENTS_PERMISSIONS,
+            CREATE_TABLE_COMPONENTS_POLICIES
     };
 
     private static final String[] tables = {
@@ -95,22 +99,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             TABLE_PERMISSIONS,
             TABLE_POLICIES,
             TABLE_INSTANCES,
-            TABLE_INSTANCES_PERMISSIONS,
-            TABLE_INSTANCES_POLICIES
-    };
+            TABLE_COMPONENTS_PERMISSIONS,
+            CREATE_TABLE_COMPONENTS_POLICIES
+    };//
 
-    private static final String[] componentTypes = {
-            "ACTIVITY",
-            "SERVICE",
-            "RECEIVER",
-            "PROVIDER"
-    };
-
-    private static final String[] policyScopeTypes = {
-            "DIRECT",
-            "LOCAL",
-            "GLOBAL"
-    };
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -118,76 +110,59 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase database) {
-
-
         for (String create : tableCreation)
     	    database.execSQL(create);
-
-/*
-    	// MaplePay
-        this.insertInstance("MainActivity", "Activity", new Policy[0], new String[0], database);
-        this.insertInstance("LoginActivity", "Activity",
-                new Policy[]{new Policy(Scope.GLOBAL,
-                        Formula.not(Formula.or(Formula.lit(Permissions.MIC), Formula.lit(Permissions.CAM))), false)},
-                new String[0], database);
-        this.insertInstance("ContactPayRec.", "Receiver",
-                new Policy[]{
-                        new Policy(Scope.DIRECT, Formula.imply(Formula.not(Formula.lit(Permissions.APP)), Formula.lit(Permissions.UAP)), false),
-                        new Policy(Scope.LOCAL, Formula.and(Formula.lit(Permissions.RCP), Formula.lit(Permissions.GAP)), false)
-                },
-                new String[0], database);
-        this.insertInstance("BalanceActivity", "Activity",
-                new Policy[]{
-                        new Policy(Scope.LOCAL, Formula.imply(
-                                Formula.not(Formula.lit(Permissions.ACP)),
-                                Formula.not(Formula.or(Formula.or(Formula.lit(Permissions.NET), Formula.lit(Permissions.WSD)),
-                                        Formula.lit(Permissions.BTT)))),
-                                true)
-                }, new String[0], database);
-        this.insertInstance("PaymentActivity", "Activity", new Policy[0], new String[0], database);
-        this.insertInstance("NormalPayRec.", "Receiver",
-                new Policy[]{
-                        new Policy(Scope.DIRECT, Formula.and(Formula.lit(Permissions.NPP), Formula.lit(Permissions.UAP)), false)
-                },
-                new String[0], database);
-        this.insertInstance("MicroPayRec.", "Receiver",
-                new Policy[]{
-                        new Policy(Scope.DIRECT,
-                                Formula.and(Formula.lit(Permissions.MPP),
-                                        Formula.or(Formula.lit(Permissions.UAP), Formula.lit(Permissions.APP))),
-                                false)
-                },
-                new String[0], database);
-        this.insertInstance("ConnectionSer.", "Service", new Policy[0], new String[]{Permissions.NET, Permissions.ACP}, database);
-        this.insertInstance("HistoryProvider", "Provider", new Policy[0], new String[]{Permissions.RSD, Permissions.WSD, Permissions.ACP}, database);
-        
-        // QRScanner
-        this.insertInstance("QRScannerActivity", "Activity", new Policy[0], new String[]{Permissions.CAM, Permissions.MPP, Permissions.UAP}, database);
-        
-        // FancyEditor
-        this.insertInstance("EditorActivity", "Activity", new Policy[0], new String[]{Permissions.RSD}, database);
-        this.insertInstance("DocEditorAct.", "Activity", new Policy[0], new String[0], database);
-        this.insertInstance("OpenDocRec.", "Receiver", new Policy[0], new String[]{Permissions.RSD}, database);
-        this.insertInstance("CloudSer.", "Service", new Policy[0], new String[]{Permissions.NET}, database);
-        
-        // TamerReader
-        this.insertInstance("ReaderActivity", "Activity", new Policy[0], new String[]{Permissions.RSD}, database);
-        this.insertInstance("DocViewAct.", "Activity", new Policy[0], new String[0], database);
-        this.insertInstance("ViewDocRec.", "Receiver", new Policy[0], new String[]{Permissions.RSD}, database);
-        */
     }
 
     private static void logDbError(String errMsg) {
         Log.e("DBERROR", errMsg);
     }
 
-    public void insertInstance(String componentName, /*Policy[] policies, String[] permissions,*/ String action, String data) {
+    public void fullWithTest() {
+        Policy[] testPolicies = {
+                new Policy(Scope.GLOBAL, Formula.not(Formula.or(Formula.lit(Permissions.MIC), Formula.lit(Permissions.CAM))), false),
+                new Policy(Scope.DIRECT, Formula.imply(Formula.not(Formula.lit(Permissions.APP)), Formula.lit(Permissions.UAP)), false),
+                new Policy(Scope.LOCAL, Formula.imply(
+                        Formula.not(Formula.lit(Permissions.ACP)),
+                        Formula.not(Formula.or(Formula.or(Formula.lit(Permissions.NET), Formula.lit(Permissions.WSD)),
+                                Formula.lit(Permissions.BTT)))), true),
+                new Policy(Scope.DIRECT, Formula.and(Formula.lit(Permissions.MPP), Formula.or(Formula.lit(Permissions.UAP), Formula.lit(Permissions.APP))), false),
+                new Policy(Scope.DIRECT, Formula.and(Formula.lit(Permissions.NPP), Formula.lit(Permissions.UAP)), false),
+
+        };
+
+        String[] testPermissions = {
+                "android.permission.ACCOUNT_MANAGER",
+                "android.permission.SET_ALARM",
+                "android.permission.CHANGE_NETWORK_STATE",
+                "android.permission.WRITE_CALENDAR",
+                "android.permission.WRITE_SMS"
+        };
+
+        insertInstance("MainActivity", ComponentType.getEnum("ACTIVITY"), "action1", "data1", Arrays.asList(testPolicies), Arrays.asList(testPermissions));
+    }
+
+    public long insertInstance(String componentName, ComponentType componentType, String action, String data, Collection<Policy> policies, Collection<String> permissions) {
+        insertComponent(componentName, componentType);
+        long instance = insertInstance(componentName, action, data);
+        for (Policy p : policies) {
+            assignComponentPolicy(componentName, insertPolicy(p));
+        }
+        for (String s : permissions) {
+            insertPermission(s);
+            assignComponentPermission(componentName, s);
+        }
+        return instance;
+    }
+
+
+    public long insertInstance(String componentName, String action, String data) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_COMPNAME, componentName);
         values.put(COLUMN_ACTION, action);
         values.put(COLUMN_DATA, data);
-        database.insert(TABLE_INSTANCES, null, values);
+        return database.insert(TABLE_INSTANCES, null, values);
     	/*
     	String pol = formatPolicies(policies);
     	String per = formatPermissions(permissions);
@@ -202,58 +177,54 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     	*/
     }
 
-    private void assignInstancePolicy(int instanceid, int policyid) {
+    public long assignComponentPolicy(String componentName, long policyid) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_INSTANCE_ID, instanceid);
+        values.put(COLUMN_COMPNAME, componentName);
         values.put(COLUMN_POLICY_ID, policyid);
-        database.insert(TABLE_INSTANCES_POLICIES, null, values);
+        return database.insert(TABLE_COMPONENTS_POLICIES, null, values);
     }
 
-    private void assignInstancePermission(int instanceid, String permissionName) {
+    public long assignComponentPermission(String componentName, String permissionName) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_INSTANCE_ID, instanceid);
+        values.put(COLUMN_COMPNAME, componentName);
         values.put(COLUMN_PERMNAME, permissionName);
-        database.insert(TABLE_INSTANCES_PERMISSIONS, null, values);
+        return database.insert(TABLE_COMPONENTS_PERMISSIONS, null, values);
     }
 
-    public void insertComponent(String componentName, String type) {
-        type = type.toUpperCase();
-        for (String t : componentTypes) {
-            if (t.equals(type)) {
-                SQLiteDatabase database = this.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(COLUMN_COMPNAME, componentName);
-                values.put(COLUMN_TYPE, type);
-                database.insert(TABLE_COMPONENTS, null, values);
-                return;
-            }
-        }
-        logDbError("Wrong component type: " + type);
+    public long insertComponent(String componentName, ComponentType componentType) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_COMPNAME, componentName);
+        values.put(COLUMN_TYPE, componentType.toString());
+        return database.insert(TABLE_COMPONENTS, null, values);
     }
 
-    public void insertPermission(String permissionName) {
+    public long insertPermission(String permissionName) {
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_PERMNAME, permissionName);
-        database.insert(TABLE_PERMISSIONS, null, values);
+        return database.insert(TABLE_PERMISSIONS, null, values);
     }
 
-    public void insertPolicy(String scope, boolean sticky, String formula) {
-        scope = scope.toUpperCase();
-        for (String pst : policyScopeTypes) {
-            if (pst.equals(scope)) {
-                SQLiteDatabase database = this.getWritableDatabase();
-                ContentValues values = new ContentValues();
-                values.put(COLUMN_SCOPE, scope);
-                values.put(COLUMN_STICKY, sticky? 1 : 0);
-                values.put(COLUMN_FORMULA, formula);
-                database.insert(TABLE_POLICIES, null, values);
-                return;
-            }
+    public long insertPolicy(Policy policy) {
+        return insertPolicy(policy.getScope().toString(), policy.isSticky(), policy.getFormula().toString());
+    }
+
+    public long insertPolicy(String scope, boolean sticky, String formula) {
+        long ret = -1;
+        try {
+            SQLiteDatabase database = this.getWritableDatabase();
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_SCOPE, Scope.getEnum(scope).toString());
+            values.put(COLUMN_STICKY, sticky? 1 : 0);
+            values.put(COLUMN_FORMULA, formula);
+            ret = database.insert(TABLE_POLICIES, null, values);
+        } catch (IllegalArgumentException e) {
+            logDbError("Wrong scope type: " + scope);
         }
-        logDbError("Wrong scope type: " + scope);
+        return ret;
     }
 
     private String formatPolicies(Policy[] policies) {

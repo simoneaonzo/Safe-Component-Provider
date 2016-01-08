@@ -1,39 +1,19 @@
 [
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/receiverchoiceactivity.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/receiverchoiceactivity.xml"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/activity_front.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/activity_front.xml"
+        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/receiverchoiceactivity.xml",
+        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/receiverchoiceactivity.xml"
     },
     {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/activity_front.xml",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/activity_front.xml"
     },
     {
-        "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/receiverchoiceactivity.xml",
-        "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/receiverchoiceactivity.xml"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/fragment_navigation_drawer.xml",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/fragment_navigation_drawer.xml"
     },
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/mainactivity.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/mainactivity.xml"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/list_item.xml",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/list_item.xml"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/list_item.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/list_item.xml"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/fragment_navigation_drawer.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/fragment_navigation_drawer.xml"
     },
     {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/list_group.xml",
@@ -44,19 +24,11 @@
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/mainactivity.xml"
     },
     {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/fragment_front.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/fragment_front.xml"
-    },
-    {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/fragment_front.xml",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/fragment_front.xml"
     },
     {
         "merged": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/build/intermediates/res/merged/debug/layout/activity_test_recv.xml",
         "source": "/home/simo/AndroidStudioProjects/Safe-Component-Provider/SCPcore/app/src/main/res/layout/activity_test_recv.xml"
-    },
-    {
-        "merged": "/home/simo/StudioProjects/SCPcore/app/build/intermediates/res/merged/debug/layout/list_group.xml",
-        "source": "/home/simo/StudioProjects/SCPcore/app/src/main/res/layout/list_group.xml"
     }
 ]

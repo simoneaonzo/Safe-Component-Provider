@@ -10,7 +10,7 @@ public class Formula {
 
     Vector<Clause> clauses;
 
-    private Formula(String x) {
+    public Formula(String x) {
         Literal l = new Literal(x, false);
         clauses = new Vector<Clause>();
         clauses.add(new Clause(l));

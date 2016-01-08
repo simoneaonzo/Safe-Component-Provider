@@ -50,6 +50,7 @@ public class ScpReceiver extends BroadcastReceiver
         Intent wrappedIntent = intent.getParcelableExtra(SCP_INTENT);
 
         String action = wrappedIntent.getAction();
+        //wrappedIntent.
         ComponentName cn = wrappedIntent.getComponent();
         if (cn != null) {
             String componentFqdn = cn.getClassName();
@@ -57,7 +58,7 @@ public class ScpReceiver extends BroadcastReceiver
 
 
         if (true) {
-            dbHelper.insertPermission("ciaodb");
+            //dbHelper.fullWithTest();
             Intent intentWrapper = new Intent();
             intentWrapper.setAction("it.unige.scp.action.answer");
             intentWrapper.putExtra(SCP_CALLER, caller);
