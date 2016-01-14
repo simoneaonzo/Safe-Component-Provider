@@ -1,0 +1,19 @@
+version: 2.1.0-a64a03-SNAPSHOT
+apkFileName: app-debug.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '14'
+  targetSdkVersion: '21'
+packageInfo:
+  forced-package-id: '127'
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'
+sharedLibrary: false
+unknownFiles:
+  !!binary "YmluL0FuZHJvaWRNYW5pZmVzdC54bWw=": '8'
+doNotCompress:
+- arsc

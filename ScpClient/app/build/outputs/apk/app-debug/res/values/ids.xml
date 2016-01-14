@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="ScrollView1">false</item>
+    <item type="id" name="spinner1">false</item>
+    <item type="id" name="buttonActivity">false</item>
+    <item type="id" name="buttonReceiver">false</item>
+    <item type="id" name="buttonService">false</item>
+    <item type="id" name="buttonProvider">false</item>
+    <item type="id" name="buttonTestActivity">false</item>
+    <item type="id" name="buttonTestService">false</item>
+    <item type="id" name="buttonTestBrowser">false</item>
+    <item type="id" name="buttonBack">false</item>
+    <item type="id" name="editText">false</item>
+</resources>

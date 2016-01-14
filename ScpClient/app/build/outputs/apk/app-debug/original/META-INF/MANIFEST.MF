@@ -1,0 +1,70 @@
+Manifest-Version: 1.0
+Built-By: 1.5.0
+Created-By: Android Gradle 1.5.0
+
+Name: res/drawable-xhdpi/ic_launcher.png
+SHA1-Digest: gqzddeP8w2AmEJQGYl7cadTXIS0=
+
+Name: res/drawable-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: GVIfdEOBv4gEny2T1jDhGGsZOBo=
+
+Name: res/values/dimens.xml
+SHA1-Digest: f8dt1LfS30IkG547Mv1UHrGnEik=
+
+Name: res/drawable-hdpi/ic_launcher.png
+SHA1-Digest: Slqa/7tzHxlfwY/qeNUb59t1NqI=
+
+Name: res/values-v11/styles.xml
+SHA1-Digest: qh9fFyPemu4madxEom+8DOd2018=
+
+Name: libs/android-support-v4.jar
+SHA1-Digest: 3tmsxql5K48a/EcPDJzTbReJFM0=
+
+Name: res/values-v14/styles.xml
+SHA1-Digest: sSmyduARJt5bO3U1cqxny/wZRUw=
+
+Name: res/menu/progress.xml
+SHA1-Digest: 0bvD0QMS1/OfQ/jIecmvPoxArqQ=
+
+Name: resources.arsc
+SHA1-Digest: uV0cp8smnTb2q3ZhlOV9lNBn8Pg=
+
+Name: bin/AndroidManifest.xml
+SHA1-Digest: WShZ3Lt5ktZAfeD1H0oEhKdB3ps=
+
+Name: res/values-w820dp/dimens.xml
+SHA1-Digest: T/q2WPul1us7AEg/2yUBIFVi99M=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA1-Digest: Nq8q3HeTluE5JNCBpVvNy3BXtJI=
+
+Name: classes.dex
+SHA1-Digest: K6TZSfyiNgVheKpu7znm5hMq/N8=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA1-Digest: RRxOSvpmhVfCwiprVV/wZlaqQpw=
+
+Name: res/layout/activity_simo_test.xml
+SHA1-Digest: qmpg6b+Nbw/5tDeqnElPSh/iehU=
+
+Name: AndroidManifest.xml
+SHA1-Digest: E2Eu25brsMHPn7MMluL6ox5qM/M=
+
+Name: res/drawable-mdpi/ic_launcher.png
+SHA1-Digest: d2G86vGO0lzbpfNL8ApVYW0His8=
+
+Name: res/values/strings.xml
+SHA1-Digest: srf5wNgL/6mywWgll8S5xbREUxk=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA1-Digest: AfPh3OJoypH966MludSW6f1RHg4=
+
+Name: res/layout-v17/activity_simo_test.xml
+SHA1-Digest: Q7z6MvYI2QOFaMiguw7gb6pnfj4=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: 0qcx7uA0tgof+9oqgIqNiw8e7X4=
+
+Name: res/values/styles.xml
+SHA1-Digest: x29Mqqeo3+lyf6kwAbOu47ItZxY=
+

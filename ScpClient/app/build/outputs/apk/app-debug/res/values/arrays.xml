@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="componentslist">
+        <item>@string/none</item>
+        <item>@string/mainactivity</item>
+        <item>@string/loginactivity</item>
+        <item>@string/contactpayrec</item>
+        <item>@string/balanceactivity</item>
+        <item>@string/paymentactivity</item>
+        <item>@string/normalpayrec</item>
+        <item>@string/micropayrec</item>
+        <item>@string/connectionser</item>
+        <item>@string/historyprovider</item>
+        <item>@string/qrscanneractivity</item>
+        <item>@string/editoractivity</item>
+        <item>@string/doceditoractivity</item>
+        <item>@string/opendocreceiver</item>
+        <item>@string/cloudservice</item>
+        <item>@string/readeractivity</item>
+        <item>@string/docviewactivity</item>
+        <item>@string/viewdocreceiver</item>
+    </string-array>
+</resources>
