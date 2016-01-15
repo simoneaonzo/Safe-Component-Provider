@@ -4,6 +4,7 @@ import com.uni.ailab.scp.scplib.ScpContext;
 import com.uni.ailab.scp.scplib.ScpIntent;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.net.Uri;
@@ -29,6 +30,7 @@ public class MainActivity extends Activity {
         Button startTA = (Button) findViewById(R.id.buttonTestActivity);
         Button startTS = (Button) findViewById(R.id.buttonTestService);
         Button startTB = (Button) findViewById(R.id.buttonTestBrowser);
+        Button startTP = (Button) findViewById(R.id.buttonTestProvider);
 
         OnClickListener listener = new OnClickListener() {
 
@@ -70,6 +72,10 @@ public class MainActivity extends Activity {
                         startTestBrowser(v, component);
                         break;
                     }
+                    case R.id.buttonTestProvider: {
+                        startTestContentResolver(v, component);
+                        break;
+                    }
                 }
 
             }
@@ -82,8 +88,15 @@ public class MainActivity extends Activity {
         startTA.setOnClickListener(listener);
         startTS.setOnClickListener(listener);
         startTB.setOnClickListener(listener);
+        startTP.setOnClickListener(listener);
     }
 
+    /*
+    sendBroadcast
+    startActivity
+    startActivityForResult
+    startService
+     */
     public void startScpActivity(View v, String cmp) {
         ScpIntent intent = new ScpIntent();
         intent.setAction(ScpIntent.ACTION_SCP);
@@ -120,33 +133,49 @@ public class MainActivity extends Activity {
         c.sendBroadcast(intent);
     }
 
+    //----------------------------------------------------------------------------------------------
     public void startTestActivity(View v, String cmp) {
         Intent intent = new Intent(this, TestActivity.class);
-        //startActivityForResult(intent, CODE);
+        startActivityForResult(intent, CODE);
         SCPlibProxy.ScpStartActivityForResult(this, intent, CODE);
     }
 
 
     public void startTestService(View v, String cmp) {
         Intent intent = new Intent(this, TestService.class);
-        //startService(intent);
+        startService(intent);
         SCPlibProxy.ScpStartService(this, intent);
-        ContentValues cv = new ContentValues();
-        cv.put("test","best");
-        cv.put
-        getContentResolver().insert(Uri.parse("content://com.uni.ailab.scp.secManifestProvider/components"), cv);
     }
 
     public void startTestBrowser(View v, String cmp) {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sixthevicious.wordpress.com/"));
-        //startActivity(browserIntent);
+        startActivity(browserIntent);
         SCPlibProxy.ScpStartActivity(this, browserIntent);
     }
 
     public void startSendBroadcast(View v, String cmp) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://sixthevicious.wordpress.com/"));
-        //startActivity(browserIntent);
-        SCPlibProxy.ScpStartActivity(this, browserIntent);
+        Intent intent = new Intent();
+        intent.setAction("com.example.Broadcast");
+        intent.putExtra("HighScore", 1000);
+        sendBroadcast(intent);
+        SCPlibProxy.ScpSendBroadcast(this, intent);
+    }
+
+
+    public void startTestContentResolver(View v, String cmp) {
+        String AUTHORITIES = "com.uni.ailab.scp.secureManifest";
+        Uri CONTENT_URI = Uri.parse("content://"+AUTHORITIES+"/components");
+        ContentResolver contentResolver = getContentResolver();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("ciao", "bau");
+        Uri res =SCPlibProxy.ScpCRinsert(this,contentResolver, CONTENT_URI, contentValues);
+        assert (res!=null);
+        /*
+        contentResolver.insert(CONTENT_URI, contentValues);
+        contentResolver.delete(CONTENT_URI, "", new String[]{});
+        contentResolver.query(CONTENT_URI, new String[]{}, "", new String[]{}, "");
+        contentResolver.update(CONTENT_URI, contentValues, "", new String[]{});
+        */
     }
 
     @Override

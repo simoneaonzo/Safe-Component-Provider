@@ -50,10 +50,17 @@
         </activity>
 
         <provider
+            android:name="com.uni.ailab.scp.provider.ProxyProvider"
+            android:authorities="com.uni.ailab.scp.ProxyProvider"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
+        <provider
             android:name="com.uni.ailab.scp.secureManifest.SecManifestProvider"
             android:authorities="com.uni.ailab.scp.secureManifest"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>

@@ -2,14 +2,20 @@ package it.unige.cseclab;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
 import android.widget.Toast;
 
 import java.util.HashMap;
 
 
 public class SCPlibProxy extends BroadcastReceiver {
+    private static final String AUTHORITIES = "com.uni.ailab.scp.ProxyProvider";
+    private static final Uri CONTENT_URI = Uri.parse("content://"+AUTHORITIES+"/");
 
     public static final String ACTION_ASK = "it.unige.scp.action.ask";
     public static final String SCP_MODE = "scp.mode";
@@ -21,8 +27,15 @@ public class SCPlibProxy extends BroadcastReceiver {
     public static final String startActivity = "startActivity";
     public static final String startService = "startService";
     public static final String startActivityForResult = "startActivityForResult";
+    public static final String sendBroadcast = "sendBroadcast";
 
     private static final HashMap<String, Activity> canonNameToActivity = new HashMap<>();
+    //private static final HashMap<Long, ContentResolverMethod> timestampToCRMethod = new HashMap<>();
+
+
+    public static void ScpSendBroadcast(Activity activity, Intent wrappedIntent) {
+        setupAndSend(activity, new Intent(), wrappedIntent, sendBroadcast);
+    }
 
     public static void ScpStartService(Activity activity, Intent wrappedIntent) {
         setupAndSend(activity, new Intent(), wrappedIntent, startService);
@@ -38,8 +51,51 @@ public class SCPlibProxy extends BroadcastReceiver {
         setupAndSend(activity, intentWrapper, wrappedIntent, startActivityForResult);
     }
 
+    public static Uri ScpCRinsert(Activity activity,
+                                  ContentResolver contentResolver,
+                                  Uri uri,
+                                  ContentValues contentValues) {
+        uri = customizeURI(activity, uri);
+        return contentResolver.insert(uri, contentValues);
+    }
 
-    public static void setupAndSend(Activity activity, Intent intentWrapper, Intent wrappedIntent, String method) {
+    public static int ScpCRdelete(Activity activity,
+                                  ContentResolver contentResolver,
+                                  Uri uri,
+                                  String where,
+                                  String[] selectionArgs) {
+        uri = customizeURI(activity, uri);
+        return contentResolver.delete(uri, where, selectionArgs);
+    }
+
+    private static Cursor ScpCRquery(Activity activity,
+                                     ContentResolver contentResolver,
+                                     Uri uri, String[] projection,
+                                     String selection,
+                                     String[] selectionArgs,
+                                     String sortOrder) {
+        uri = customizeURI(activity, uri);
+        return contentResolver.query(uri, projection, selection, selectionArgs, sortOrder);
+    }
+
+    public static int ScpCRupdate(Activity activity,
+                                  ContentResolver contentResolver,
+                                  Uri uri,
+                                  String where,
+                                  String[] selectionArgs) {
+        uri = customizeURI(activity, uri);
+        return contentResolver.delete(uri, where, selectionArgs);
+    }
+
+    private static Uri customizeURI(Activity activity, Uri uri) {
+        String canonicalName = activity.getClass().getCanonicalName();
+        String uristr = uri.toString();
+        uristr = Uri.encode(uristr);
+        uristr = CONTENT_URI +"query?component="+canonicalName+"&uri="+uristr;
+        return Uri.parse(uristr);
+    }
+
+    private static void setupAndSend(Activity activity, Intent intentWrapper, Intent wrappedIntent, String method) {
         String canonicalName = activity.getClass().getCanonicalName();
         intentWrapper.setAction(ACTION_ASK);
         intentWrapper.putExtra(SCP_CALLER, canonicalName);
@@ -48,6 +104,8 @@ public class SCPlibProxy extends BroadcastReceiver {
         canonNameToActivity.put(canonicalName, activity);
         activity.getApplicationContext().sendBroadcast(intentWrapper);
     }
+
+
 
 
     @Override
@@ -73,8 +131,40 @@ public class SCPlibProxy extends BroadcastReceiver {
             case startService:
                 activity.startService(wrappedIntent);
                 break;
+            case sendBroadcast:
+                activity.sendBroadcast(wrappedIntent);
+                break;
             default:
                 Toast.makeText(context, "ERROR: UNKNOWN METHOD", Toast.LENGTH_LONG).show();
         }
     }
+
+    /*
+    private abstract static class ContentResolverMethod {
+        protected final ContentResolver contentResolver;
+        protected final Uri contentURI;
+        protected final Long timestamp;
+
+        ContentResolverMethod(ContentResolver contentResolver, Uri contentURI) {
+            this.contentResolver = contentResolver;
+            this.contentURI = contentURI;
+            this.timestamp = System.currentTimeMillis();
+        }
+
+        Long getTimestamp() {
+            return timestamp;
+        }
+    }
+
+    private static class InsertMethod extends ContentResolverMethod {
+        private final ContentValues contentValues;
+
+        InsertMethod(ContentResolver contentResolver, Uri contentURI, ContentValues contentValues) {
+            super(contentResolver, contentURI);
+            this.contentValues = contentValues;
+        }
+
+    }
+    */
+
 }

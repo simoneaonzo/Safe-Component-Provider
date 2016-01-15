@@ -71,6 +71,15 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="3.56" />
 
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEST PROVIDER"
+            android:id="@+id/buttonTestProvider"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="3.56" />
+
     </LinearLayout>
 
 </ScrollView>

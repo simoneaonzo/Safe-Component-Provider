@@ -48,12 +48,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <provider
+            android:name=".provider.ProxyProvider"
+            android:authorities="com.uni.ailab.scp.ProxyProvider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
         <provider
             android:name=".secureManifest.SecManifestProvider"
             android:authorities="com.uni.ailab.scp.secureManifest"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true">
+        </provider>
     </application>
 
 </manifest>
